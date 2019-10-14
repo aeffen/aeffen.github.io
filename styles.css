@@ -54,8 +54,8 @@ p {font-size: 14px;}
   width: 100%;
   padding-top: 10px;
   padding-bottom: 10px;
-  background-color: #333;
-  color: #fff;}
+  background-color: #e3e3e3;
+  color: #000;}
 
 .navbar {
   padding-top: 10px;
@@ -65,12 +65,13 @@ p {font-size: 14px;}
   border: 0;
   border-radius: 0;
   margin-bottom: 30px;
-  font-size: 16px;}
+  font-size: 16px;
+  background-color: #e3e3e3;}
 .navbar-nav  li a:hover {
-  color: #fff !important;}
+  color: #000 !important;}
 .navbar-brand {
   font-size: 36px;
-  color: #fff;}
+  color: #000;}
 .navbar-brand:hover{
   color:#6495ED;}
 
