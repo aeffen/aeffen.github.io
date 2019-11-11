@@ -3,12 +3,23 @@
   margin: 0 auto;
 }
 
+* {
+  border-radius: 0 !important;
+}
+
+div {
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
 .footer {
   font: 14px 'Roboto', sans-serif;
-  line-height: 1.5;
   width: 100%;
   position: fixed;
   bottom: 0;}
+
+img {
+  border-radius: 0px;}
 
 body {
     font: 14px 'Roboto', sans-serif;
@@ -17,12 +28,11 @@ body {
 
 h1 {font: 36px 'Roboto';
     font-weight: 900;
-    color: #fff;
-    background-color:#6495ED;}
+    color: #6495ED;}
 
 h2 {font: 28px 'Roboto';
     font-weight: 900;
-    color: #fff;}
+    color: #6495ED;}
 
 img {display: block;
      margin-top: 10px;
@@ -41,32 +51,28 @@ a:hover{
 p {font-size: 14px;}
 
 .footnote {
-  font-size: 11px;}
+  font-size: 12px;}
   
 .container-title {
   padding-top: 0px;
   padding-bottom: 30px;
   padding-left: 30px;
-  padding-right: 30px;
-  background-color: #fff;}
+  padding-right: 30px;}
 
 .container-footer {
   width: 100%;
-  padding-top: 10px;
-  padding-bottom: 10px;
-  background-color: #e3e3e3;
-  color: #000;}
+  padding-top: 0px;
+  padding-bottom: 0px;;
+  color: #676767;}
 
 .navbar {
   padding-top: 10px;
-  padding-bottom: 10px;
   padding-left: 30px;
   padding-right: 30px;
+  padding-bottom:10px
   border: 0;
-  border-radius: 0;
-  margin-bottom: 30px;
   font-size: 16px;
-  background-color: #e3e3e3;}
+  color: #676767;}
 .navbar-nav  li a:hover {
   color: #000 !important;}
 .navbar-brand {
