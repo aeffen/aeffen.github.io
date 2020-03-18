@@ -19,7 +19,7 @@ div {
   bottom: 0;}
 
 img {
-  border-radius: 0px;}
+  border: 1px solid #ccc;}
 
 body {
     font: 14px 'Roboto', sans-serif;
@@ -81,39 +81,16 @@ p {font-size: 14px;}
 .navbar-brand:hover{
   color:#6495ED;}
 
-input[type=checkbox] {
-display: none;
+.flex-container {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-content: flex-start;
+  align-items: center;
 }
 
-.container img {
-margin: 100px;
-transition: transform 0.25s ease;
-cursor: zoom-in;
-}
-
-input[type=checkbox]:checked ~ label > img {
-transform: scale(2);
-cursor: zoom-out;
-}
-
-div.gallery {
-  margin: 5px;
-  border: 1px solid #ccc;
-  float: left;
-  width: 235px;
-}
-
-div.gallery:hover {
-  border: 1px solid #777;
-}
-
-div.gallery img {
-  width: 100%;
-  height: auto;
-  border-radius: 0px;
-}
-
-div.desc {
-  padding: 12px;
-  text-align: left;
+.flex-item {
+  flex: 0 30%;
+  height: flex;
+  margin: 1%;
 }
