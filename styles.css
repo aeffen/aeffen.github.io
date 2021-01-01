@@ -86,13 +86,29 @@ p {font-size: 14px;}
   flex-flow: row wrap;
   justify-content: center;
   align-content: flex-start;
-  align-items: center;
+  align-items: top;
 }
 
 .flex-item {
-  flex: 0 30%;
+  flex: 0 40%;
   height: flex;
   margin: 1%;
+}
+
+.slider img{
+  width:250px;
+  height:250px;
+  display:none;
+  border: 0;
+}
+
+.slider{
+  float: center;
+  margin: 1%;
+}
+
+.clear{
+  clear: both;
 }
 
 table {
@@ -111,3 +127,4 @@ th {
 }
 
 tr:nth-child(even) {background-color: #f2f2f2;}
+tr:hover{background-color: #6495ED80;}

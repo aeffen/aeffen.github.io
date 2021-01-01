@@ -29,123 +29,237 @@
 </nav>
 
 <div class="col-sm-12">
+  <p>List first compiled in 2021; earlier entries are incomplete. Click column header to toggle ascending/descending sort.</p>
 <div style="overflow-x:auto;">
-  <table>
+  <table id="bookTable">
     <tr>
-      <th>title</th>
-      <th>author lname</th>
-      <th>author fname</th>
-      <th>completed</th>
-      <th>comments</th>
+      <th onclick="sortTable(0)">title</th>
+      <th onclick="sortTable(1)">author lname</th>
+      <th onclick="sortTable(2)">author fname</th>
+      <th onclick="sortTable(3)">completed</th>
+      <th onclick="sortTable(4)">comments</th>
+    </tr>
+    <tr>
+      <td>Bad Blood</td>
+      <td>Carreyrou</td>
+      <td>John</td>
+      <td>2018-09</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Do No Harm</td>
+      <td>Marsh</td>
+      <td>Henry</td>
+      <td>2018-12</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Naked Statistics</td>
+      <td>Wheelan</td>
+      <td>Charles</td>
+      <td>2019-03</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Letters to a Young Scientist</td>
+      <td>Wilson</td>
+      <td>E.O.</td>
+      <td>2019-06</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>The Immortal Life of Henrietta Lacks</td>
+      <td>Skloot</td>
+      <td>Rebecca</td>
+      <td>2019-07</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>The Demon in the Freezer</td>
+      <td>Preston</td>
+      <td>Richard</td>
+      <td>2019-07</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>An Unquiet Mind</td>
+      <td>Jamison</td>
+      <td>Kay Redfield</td>
+      <td>no</td>
+      <td></td>
     </tr>
     <tr>
       <td>The Other Brain</td>
       <td>Fields</td>
       <td>R. Douglas</td>
       <td>no</td>
-      <td>n/a</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Nothing to Envy</td>
+      <td>Demick</td>
+      <td>Barbara</td>
+      <td>no</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Educated</td>
+      <td>Westover</td>
+      <td>Tara</td>
+      <td>no</td>
+      <td></td>
     </tr>
     <tr>
       <td>Bad Pharma</td>
       <td>Goldacre</td>
       <td>Ben</td>
       <td>no</td>
-      <td>n/a</td>
+      <td></td>
     </tr>
     <tr>
       <td>Trick Mirror</td>
       <td>Tolentino</td>
       <td>Jia</td>
       <td>no</td>
-      <td>n/a</td>
+      <td></td>
     </tr>
     <tr>
       <td>The Structure of Scientific Revolutions</td>
       <td>Kuhn</td>
       <td>Thomas</td>
       <td>no</td>
-      <td>n/a</td>
+      <td></td>
     </tr>
     <tr>
       <td>The Center Cannot Hold</td>
       <td>Saks</td>
       <td>Elyn R.</td>
       <td>no</td>
-      <td>n/a</td>
+      <td></td>
     </tr>
     <tr>
       <td>Transcendent Kingdom</td>
       <td>Gyasi</td>
       <td>Yaa</td>
       <td>no</td>
-      <td>n/a</td>
+      <td></td>
     </tr>
     <tr>
       <td>Lab Girl</td>
       <td>Jahren</td>
       <td>Hope</td>
       <td>no</td>
-      <td>n/a</td>
+      <td></td>
     </tr>
     <tr>
       <td>Meander, Spiral, Explode</td>
       <td>Alison</td>
       <td>Jane</td>
       <td>no</td>
-      <td>n/a</td>
+      <td></td>
     </tr>
     <tr>
       <td>The Drunkard's Walk</td>
       <td>Mlodinow</td>
       <td>Leonard</td>
       <td>no</td>
-      <td>n/a</td>
+      <td></td>
     </tr>
     <tr>
       <td>The Greatest Benefit to Mankind</td>
       <td>Porter</td>
       <td>Roy</td>
       <td>no</td>
-      <td>n/a</td>
-    </tr>
-    <tr>
-      <td>The Demon in the Freezer</td>
-      <td>Preston</td>
-      <td>Richard</td>
-      <td>no</td>
-      <td>n/a</td>
+      <td></td>
     </tr>
     <tr>
       <td>Teaching Neuroscience</td>
       <td>(eds) Birkett</td>
       <td>Melissa</td>
       <td>no</td>
-      <td>n/a</td>
+      <td></td>
     </tr>
     <tr>
       <td>Mens Et Mania</td>
       <td>Keyser</td>
       <td>S. Jay</td>
       <td>no</td>
-      <td>n/a</td>
+      <td></td>
     </tr>
     <tr>
       <td>The Secret Lives of Colour</td>
       <td>St. Clair</td>
       <td>Kassia</td>
       <td>no</td>
-      <td>n/a</td>
+      <td></td>
     </tr>
     <tr>
       <td>Deep Work</td>
       <td>Newport</td>
       <td>Cal</td>
       <td>no</td>
-      <td>n/a</td>
+      <td></td>
     </tr>
   </table>
 </div>
 </div>
+
+<script>
+function sortTable(n) {
+  var table, rows, switching, i, x, y, shouldSwitch, dir, switchcount = 0;
+  table = document.getElementById("bookTable");
+  switching = true;
+  //Set the sorting direction to ascending:
+  dir = "asc"; 
+  /*Make a loop that will continue until
+  no switching has been done:*/
+  while (switching) {
+    //start by saying: no switching is done:
+    switching = false;
+    rows = table.rows;
+    /*Loop through all table rows (except the
+    first, which contains table headers):*/
+    for (i = 1; i < (rows.length - 1); i++) {
+      //start by saying there should be no switching:
+      shouldSwitch = false;
+      /*Get the two elements you want to compare,
+      one from current row and one from the next:*/
+      x = rows[i].getElementsByTagName("TD")[n];
+      y = rows[i + 1].getElementsByTagName("TD")[n];
+      /*check if the two rows should switch place,
+      based on the direction, asc or desc:*/
+      if (dir == "asc") {
+        if (x.innerHTML.toLowerCase() > y.innerHTML.toLowerCase()) {
+          //if so, mark as a switch and break the loop:
+          shouldSwitch= true;
+          break;
+        }
+      } else if (dir == "desc") {
+        if (x.innerHTML.toLowerCase() < y.innerHTML.toLowerCase()) {
+          //if so, mark as a switch and break the loop:
+          shouldSwitch = true;
+          break;
+        }
+      }
+    }
+    if (shouldSwitch) {
+      /*If a switch has been marked, make the switch
+      and mark that a switch has been done:*/
+      rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
+      switching = true;
+      //Each time a switch is done, increase this count by 1:
+      switchcount ++;      
+    } else {
+      /*If no switching has been done AND the direction is "asc",
+      set the direction to "desc" and run the while loop again.*/
+      if (switchcount == 0 && dir == "asc") {
+        dir = "desc";
+        switching = true;
+      }
+    }
+  }
+}
+</script>
 
 <!-- Footer -->
 <div class="container-footer text-center">
